@@ -1,0 +1,40 @@
+<?php require('template/header.phtml') ?>
+
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+
+<!-- Redirect the user to the home page if they are already logged in. -->
+<?php if ($view->redirect == True) : ?>
+    <script>window.location="index.php"</script>
+<?php endif;?>
+
+
+<title>KRM Project Submitter - Register</title>
+
+<body class="background">
+    <div class="bg-light login-clean">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+            <div class="form-group"><input class="form-control" type="password" name="confirm-password" placeholder="Confirm Password"></div>
+            <div class="form-group"><input class="form-control" name="company-name" placeholder="Company Name"></div>
+            <div class="form-group"><input class="form-control" name="full-name" placeholder="Full Name"></div>
+            <div class="form-group"><input class="form-control" name="phone-number" placeholder="Phone Number"></div>
+
+            <!-- Anti Spam Field that is hidden from the user and is supposed to be left empty. -->
+            <div class="form-group antispam"><input class="form-control" name="url" /></div>
+
+            <div class="form-group"><button class="btn btn-primary btn-block" name="submit" type="submit">Register</button></div>
+
+            <!-- Display any registration errors here. -->
+            <?php if (isset($view->result)) : ?>
+                <p class="verdana-font"><?php echo $view->result; ?></p>
+            <?php endif; ?>
+        </form>
+    </div>
+</body>
+
+</html>
+
+<?php require('template/footer.phtml') ?>

@@ -1,0 +1,40 @@
+<?php require('template/header.phtml') ?>
+<?php include 'sendemail.php'; ?>
+<?php require_once("Models/ProjectData.php") ?>
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+
+    <title>KRM Project Submitter - Project Application</title>
+
+    <body class="background">
+
+    <!-- Display project submission message here. -->
+    <?php if (isset($view->submissionMessage)) : ?>
+        <p class="verdana-font"><?php echo $view->submissionMessage; ?></p>
+    <?php endif; ?>
+    <?php echo $alert; ?>
+    <div class="bg-light login-clean">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <h2 class="sr-only">Project Form</h2>
+            <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
+            <div class="form-group"><input class="form-control" type="text" name="project-Name" placeholder="Project Name"></div>
+            <div class="form-group"><input class="form-control" type="text" name="customer-Name" placeholder="Customer Name"></div>
+            <textarea class="form-group textarea" name="description" rows="4" cols="24" placeholder="Project Description"></textarea>
+            <div class="form-group"><input class="form-control" type="text" name="budget-range" placeholder="Budget Range"></div>
+            <label for="deadline" class="verdana">Project Deadline:</label>
+            <div class="form-group"><input class="form-control" type="date" name="deadline" placeholder="Deadline"></div>
+            <div class="form-group"><input class="form-control" type="text" name="project-manager" placeholder="Project Manager"></div>
+
+            <!-- Contact details fields are only required if the user is not logged in -->
+            <?php if (!isset($_SESSION['email'])) : ?>
+                <div class="form-group"><input class="form-control" type="text" name="contact-email" placeholder="Contact Email"></div>
+                <div class="form-group"><input class="form-control" type="text" name="contact-number" placeholder="Contact Number"></div>
+            <?php endif; ?>
+
+            <div class="form-group"><button class="btn btn-primary btn-block" name="submit" type="submit">Submit</button></div>
+
+        </form>
+    </div>
+    </body>
+
+
+<?php require('template/footer.phtml') ?>

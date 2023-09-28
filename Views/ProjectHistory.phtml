@@ -1,0 +1,63 @@
+<?php require('template/header.phtml') ?>
+
+    <title>KRM Project Submitter - Project History</title>
+
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+
+    <!-- Redirect the user to the home page if they are not logged in. -->
+    <?php if ($view->redirect == True) : ?>
+        <script>window.location="login.php"</script>
+    <?php endif;?>
+
+    <body class="background">
+    <?php if(isset($view->projects[0])): ?>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Edit</th>
+                <th>Project Name</th>
+                <th>Customer Name</th>
+                <th>Description</th>
+                <th>Budget</th>
+                <th>Deadline</th>
+                <th>Project Manager</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Display each of the user's bids in a table. -->
+
+            <?php foreach ($view->projects as $project): ?>
+
+                <?php echo '<tr> <td> <a href="viewProject.php?projectID=' .  $project["projectID"] . '">Edit ' . '</a></td> <td>' . $project["projectName"] . '</td> <td>' . $project["customerName"] . '</td> <td><span>' . $project["description"] . '</span> </td> <td>' . $project["budget"] . '</td> <td>' . $project["deadline"] . '</td> <td>' . $project["projectManager"] . '</td> </tr>';?>
+            <?php endforeach; ?>
+
+            <?php else : ?>
+                <body>You have not submitted any project applications.</body>
+            <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+    <ul class="pagination card list-group-horizontal col-8 offset-2 col-md-4 offset-md-4 d-flex justify-content-around my-2">
+        <?php if($view->disableFirst == False): ?>
+            <li class="p-1"><a href="ProjectHistory.php?pageNumber=1">1</a></li>
+        <?php endif; ?>
+
+        <?php if($view->disablePrevious == False): ?>
+            <li class="p-1"><a href="ProjectHistory.php?pageNumber=<?php echo $view->previousPageNumber;?>"><?php echo $view->previousPageNumber;?></a></li>
+        <?php endif; ?>
+
+        <li class="p-1"><?php echo $view->currentPageNumber;?></li>
+
+        <?php if($view->disableNext == False): ?>
+            <li class="p-1"><a href="ProjectHistory.php?pageNumber=<?php echo $view->nextPageNumber;?>"><?php echo $view->nextPageNumber;?></a></li>
+        <?php endif; ?>
+
+        <?php if($view->disableFinal == False): ?>
+            <li class="p-1"><a href="ProjectHistory.php?pageNumber=<?php echo $view->totalPages;?>"><?php echo $view->totalPages;?></a></li>
+        <?php endif; ?>
+    </ul>
+    </body>
+
+
+<?php require('template/footer.phtml') ?>

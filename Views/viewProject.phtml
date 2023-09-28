@@ -1,0 +1,42 @@
+<?php require('template/header.phtml') ?>
+<?php include 'sendemail.php'; ?>
+<?php require_once("Models/ProjectData.php") ?>
+<link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+
+<title>KRM Project Submitter - Edit Application</title>
+
+<body class="background">
+
+<!-- Redirect the user to the home page if they are not logged in. -->
+<?php if ($view->redirect == True) : ?>
+    <script>window.location="ProjectHistory.php"</script>
+<?php endif;?>
+
+<!-- Display project submission message here. -->
+<?php if (isset($view->submissionMessage)) : ?>
+    <p class="verdana-font"><?php echo $view->submissionMessage; ?></p>
+<?php endif; ?>
+<?php echo $alert; ?>
+<div class="bg-light login-clean">
+    <form action="/editProject.php" method="post">
+        <h2 class="sr-only">Project Form</h2>
+        <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
+        <div class="form-group"><input class="form-control" type="text" name="project-Name" placeholder="Project Name" value="<?php echo $view->projectName; ?>"></div>
+        <div class="form-group"><input class="form-control" type="text" name="customer-Name" placeholder="Customer Name" value="<?php echo $view->customerName; ?>"></div>
+        <textarea class="form-group textarea" name="description" rows="4" cols="24" placeholder="Project Description"><?php echo $view->description; ?></textarea>
+        <div class="form-group"><input class="form-control" type="text" name="budget-range" placeholder="Budget" value="<?php echo $view->budget; ?>"></div>
+        <label for="deadline" class="verdana">Project Deadline:</label>
+        <div class="form-group"><input class="form-control" type="date" name="deadline" value="<?php echo $view->deadline; ?>"></div>
+        <div class="form-group"><input class="form-control" type="text" name="project-manager" placeholder="Project Manager" value="<?php echo $view->projectManager; ?>"></div>
+        <div class="form-group"><input class="form-control" type="text" name="contact-email" placeholder="Contact Email" value="<?php echo $view->email; ?>"></div>
+        <div class="form-group"><input class="form-control" type="text" name="contact-number" placeholder="Contact Number" value="<?php echo $view->phone; ?>"></div>
+        <input type="hidden" name="project-id" value="<?php echo $view->projectID; ?>">
+
+        <div class="form-group"><button class="btn btn-primary btn-block" name="submit" type="submit">Re-Submit</button></div>
+
+    </form>
+</div>
+</body>
+
+
+<?php require('template/footer.phtml') ?>

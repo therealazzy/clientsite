@@ -1,0 +1,36 @@
+<?php require('template/header.phtml') ?>
+
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+
+<!-- Redirect the user to the home page if they are already logged in. -->
+<?php if ($view->redirect == True) : ?>
+    <script>window.location="Profile.php"</script>
+<?php endif;?>
+
+
+<title>KRM Project Submitter - Update details</title>
+
+<body class="background">
+    <div class="bg-light login-clean">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <h2 class="sr-only">Edit info</h2>
+            <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
+            <div class="form-group"><input class="form-control" type="email" name="email" value="<?php echo $_SESSION['user-email']; ?>" placeholder="New Email"></div>
+            <div class="form-group"><input class="form-control" type="password" name="new-password" placeholder="New Password"></div>
+            <div class="form-group"><input class="form-control" type="password" name="confirm-new-password" placeholder="Confirm New Password"></div>
+            <div class="form-group"><input class="form-control" name="phone-number" value="<?php echo $_SESSION['user-phone']; ?>" placeholder="New Phone Number"></div>
+            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Current Password"></div>
+
+            <!-- Display any registration errors here. -->
+            <?php if (isset($view->result)) : ?>
+                <p class="verdana-font"><?php echo $view->result; ?></p>
+            <?php endif; ?>
+
+            <div class="form-group"><button class="btn btn-primary btn-block" name="update" type="submit">Update Details</button></div>
+        </form>
+    </div>
+</body>
+
+</html>
+
+<?php require('template/footer.phtml') ?>

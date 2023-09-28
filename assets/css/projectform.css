@@ -1,0 +1,222 @@
+.login-clean {
+    background: transparent;
+    padding: 200px 0;
+}
+
+.background {
+    background: transparent;
+}
+#mainNav{
+    border-bottom: 1px solid rgba(33,37,41,.1);
+    background-color: transparent;
+    transition: all .2s;
+}
+@media (min-width:992px) {
+    #mainNav {
+        border-color: royalblue ;
+        background-color: royalblue;
+    }
+    @media(min-width: 992px){
+        .navbar-expand-lg {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+        }
+        .navbar {
+            position: relative;
+            padding: .5rem 1rem;
+        }
+    }
+    .collapse:not(.show){
+        display: none;
+    }
+    @media (min-width: 992px) {
+        .navbar-expand-lg {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+        }
+
+        .navbar {
+            position: relative;
+            padding: .5rem 1rem;
+        }
+    }
+    .login-clean form {
+        max-width: 900px;
+        width: 100%;
+        margin: 0 auto;
+        background-color: transparent;
+        padding: 80px;
+        border-radius: 9px;
+        color: #505e6c;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-clean .illustration {
+        text-align: center;
+        padding: 0 0 20px;
+        font-size: 100px;
+        color: #f58200;
+    }
+
+    .login-clean form .form-control {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid transparent;
+        border-radius: 0;
+        box-shadow: none;
+        outline: none;
+        color: inherit;
+        text-indent: 8px;
+        height: 70px;
+        font-family: Verdana;
+    }
+
+    .login-clean form .btn-primary {
+        background: #f5820c;
+        border: none;
+        border-radius: 10px;
+        font-family: Verdana;
+        padding: 11px;
+        box-shadow: none;
+        margin-top: 26px;
+        text-shadow: none;
+        outline: none !important;
+    }
+
+    .login-clean form .btn-primary:hover, .login-clean form .btn-primary:active {
+        background: #f5940c;
+    }
+
+    .login-clean form .btn-primary:active {
+        transform: translateY(1px);
+    }
+    .antispam {
+        display: none;
+    }
+    elelemnt.style{
+
+    }
+
+    .row{
+        display: flex;
+        -mx-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    body{
+        font-family: Merriweather,Helvetica Neue,Arial,sans-serif;
+    }
+    body{
+        margin: 0px;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        text-align: left;
+        background-color: white;
+    }
+    html{
+        font-family: sans-serif;
+        line-height: 1.15;
+        -webkit-text-size-adjust:100%;
+    }
+    :root {
+        --blue: #007bff;
+        --indigo: #6610f2;
+        --purple: #6f42c1;
+        --pink: #e83e8c;
+        --red: #dc3545;
+        --orange: #fd7e14;
+        --yellow: #ffc107;
+        --green: #28a745;
+        --teal: #20c997;
+        --cyan: #17a2b8;
+        --white: #fff;
+        --gray: #868e96;
+        --gray-dark: #343a40;
+        --primary: #f05f40;
+        --secondary: #868e96;
+        --success: #28a745;
+        --info: #17a2b8;
+        --warning: #ffc107;
+        --danger: #dc3545;
+        --light: #f8f9fa;
+        --dark: #343a40;
+        --breakpoint-xs: 0;
+        --breakpoint-sm: 576px;
+        --breakpoint-md: 768px;
+        --breakpoint-lg: 992px;
+        --breakpoint-xl: 1200px;
+        --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    }
+    #mainNav, #mainNav .navbar-brand{
+        font-family: Open Sans,Helvetica Neue,Arial,sans-serif;
+    }
+    .fixed-bottom, .fixed-top{
+        position: fixed;
+        right: 0;
+        left:0;
+        z-index: 1030;
+    }
+    .fixed-top{
+        top: 0;
+    }
+    @media(min-width: 992px){
+        .navbar-expand-lg {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+        }
+        .navbar {
+            position: relative;
+            padding: .5rem 1rem;
+        }
+    }
+    .collapse:not(.show){
+        display: none;
+    }
+    article, aside, figcaption, figure, footer, header, hgroup, main, nav, section{
+        display: block;
+    }
+    .bg-primary{
+        background-color: #f05f40!important;
+    }
+    section{
+        padding: 8rem 0;
+    }
+    .text-center{
+        text-align: center!important;
+    }
+    .ml-auto, mx-auto{
+        margin-left: auto!important;
+    }
+    @media(min-width: 992px){
+        .offset-lg-8{
+            margin-left: 66.66667%;
+        }
+    }
+    .text-faded{
+        color: hsla(0,0%,100%,.7);
+    }
+    hr{
+        max-width: 50px;
+        border-width: 3px;
+        border-color: #f05f40;
+    }
+    hr{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    hr{
+        box-sizing: content-box;
+        height: 0;
+        overflow: visible;
+    }
+}

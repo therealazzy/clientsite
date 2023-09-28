@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Testimonials.css">
+</head>
+<body id="page-top">
+<nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container"><a class="navbar-brand js-scroll-trigger" href="index.php">KRM Projects</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php#about">About</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="ProjectForm.php">New Application</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="ProjectHistory.php">Sent Project Applications</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php#contact">Contact</a></li>
+                <!-- Display the logout option if the user is logged in.
+                 Otherwise display the login button. -->
+                <?php if (isset($_SESSION['email'])) : ?>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="Profile.php">My Profile</a>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="logout.php">Logout</a>
+                    <?php else : ?>
+                    <a class="btn btn-primary text-left ml-auto" role="button" href="login.php">Login</a></div>
+        <?php endif; ?>
+            </ul>
+        </div>
+    </div>
+</nav>
