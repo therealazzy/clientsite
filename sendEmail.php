@@ -24,13 +24,13 @@ if(isset($_POST['submit'])){
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'krmproject.mail@gmail.com';
-        $mail->Password = 'group21B';
+        $mail->Username = '';
+        $mail->Password = '';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = '587';
 
-        $mail->setFrom('krmproject.mail@hmail.com');
-        $mail->addAddress('p.j.hunter@edu.salford.ac.uk');
+        $mail->setFrom('');
+        $mail->addAddress('');
 
         $mail->isHTML(true);
         $mail->Subject = 'A New Project Has Been Submitted';
